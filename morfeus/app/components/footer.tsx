@@ -96,7 +96,7 @@ export default function Footer() {
             </MDBCol>
 
             <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Bize Ulaşın</h6>
+              <h6 className='text-uppercase fw-bold mb-4'>Bi selam û dua..</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
                Agirî
