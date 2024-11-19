@@ -13,7 +13,7 @@ export function Tegihistin() {
      <Button  href="tel:+905549765692"><FaPhone  /></Button> Lêgerîn 
 
 
-  <WhatsAppWidget message=" WhatsApp ê de ji me re binivîsin" inputPlaceHolder="Mesajınızı Yazın" replyTimeText="Dema herî nêz de em ê vegerin we înşallah" sendButtonText="Gönder" companyName="" phoneNumber="+905549765692" ></WhatsAppWidget>
+  <WhatsAppWidget message=" WhatsApp ê de ji me re binivîsin" inputPlaceHolder="Mesajınızı Yazın" replyTimeText="Dema herî nêz de em ê vegerin we înşallah" sendButtonText="Bişînin" companyName="" phoneNumber="+905549765692" ></WhatsAppWidget>
 
   </Alert>
     </div>
