@@ -17,8 +17,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "MorFeuS",
-  description: "Fikir ve Sanat Atölyesi",
+  title: "Antolojîya Îslam ê",
+  description: "Warê agahîyê û bihuşt a nivîsan",
 };
 
 export default function RootLayout({
