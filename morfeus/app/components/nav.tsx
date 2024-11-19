@@ -23,15 +23,21 @@ function BasicExample() {
                 Hedîs
               </NavDropdown.Item>
               <NavDropdown.Item href="hizmetler/uygulama">
-              Şerhên melayan</NavDropdown.Item>
+              Tefsir</NavDropdown.Item>
+  </NavDropdown>
+
+
 
               <NavDropdown.Item href="hizmetler/uygulama">
-              ...</NavDropdown.Item>
-            </NavDropdown>
+              Fikih</NavDropdown.Item>
+        
+              <NavDropdown.Item href="hizmetler/uygulama">
+              Kelam</NavDropdown.Item>
+            
 
-
-
-
+              <NavDropdown.Item href="hizmetler/uygulama">
+              Şerhên melayan</NavDropdown.Item>
+          
 
 
 
