@@ -24,7 +24,7 @@ function BasicExample() {
               </NavDropdown.Item>
               <NavDropdown.Item href="hizmetler/uygulama">
               Tefsir</NavDropdown.Item>
-  </NavDropdown>
+  
 
 
 
@@ -37,7 +37,7 @@ function BasicExample() {
 
               <NavDropdown.Item href="hizmetler/uygulama">
               Şerhên melayan</NavDropdown.Item>
-          
+          </NavDropdown>
 
 
 
