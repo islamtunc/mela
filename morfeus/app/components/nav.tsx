@@ -42,7 +42,7 @@ function BasicExample() {
           
 
 
-            <Nav.Link href="/iletisim">İletişim</Nav.Link>
+            <Nav.Link href="/iletisim">Têkili</Nav.Link>
 
           </Nav>
         </Navbar.Collapse>
