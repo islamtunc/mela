@@ -10,7 +10,7 @@ export default function Footer() {
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
-          <span>Bize Ulaşın</span>
+          <span>Alîkarî Rexnedarî û Têkilî</span>
         </div>
 
         <div>
@@ -41,14 +41,14 @@ export default function Footer() {
             <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
                 <MDBIcon icon="gem" className="me-3" />
-              Morfeus 
+              Antolojîya Îslam ê 
               </h6>
               <p>
               </p>
             </MDBCol>
 
             <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Hizmetlerimiz</h6>
+              <h6 className='text-uppercase fw-bold mb-4'>...</h6>
               <p>
                 <a href='#!' className='text-reset'>
                   
@@ -61,7 +61,7 @@ export default function Footer() {
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                Danışmanlık
+                Şewirmendî
                 </a>
               </p>
               <p>
@@ -72,20 +72,20 @@ export default function Footer() {
             </MDBCol>
 
             <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Müşteri Memnuniyeti</h6>
+              <h6 className='text-uppercase fw-bold mb-4'>Şîroveyên we</h6>
               <p>
                 <a href='#!' className='text-reset'>
-                  Kısa zamanda kaliteli iş
+                  Qeydên malpêrê
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Bütçeye uygun ve çözümcü
+                  Çavkani û zêdetir
                 </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
-                  Estetik açıdan zengin sonuçlar
+                  ....
                 </a>
               </p>
               <p>
@@ -99,7 +99,7 @@ export default function Footer() {
               <h6 className='text-uppercase fw-bold mb-4'>Bize Ulaşın</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-               Ağrı/Turkiye
+               Agirî
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
