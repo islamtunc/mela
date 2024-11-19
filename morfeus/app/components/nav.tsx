@@ -11,19 +11,19 @@ function BasicExample() {
   return (
     <Navbar style={{background:"#FFC0CB"}} expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">MorfeUS</Navbar.Brand>
+        <Navbar.Brand href="#home">Antolojîya Îslam ê</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Anasayfa</Nav.Link>
+            <Nav.Link href="/">Malper</Nav.Link>
             <Nav.Link href="/kurumsal">Hakkımızda</Nav.Link>
-            <NavDropdown title="Hizmetler" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/jiriyacekiri/">Projeler</NavDropdown.Item>
+            <NavDropdown title="Pirtukxane" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/jiriyacekiri/">Qur'an'a pîroz</NavDropdown.Item>
               <NavDropdown.Item href="hizmetler/referans">
-                Referanslar
+                Hedîs
               </NavDropdown.Item>
               <NavDropdown.Item href="hizmetler/uygulama">
-              Uygulamalar</NavDropdown.Item>
+              Şerhên melayan</NavDropdown.Item>
 
               <NavDropdown.Item href="hizmetler/uygulama">
               ...</NavDropdown.Item>
