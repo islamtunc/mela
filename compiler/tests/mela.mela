@@ -31,4 +31,12 @@
 دعاء = "اللهم صل على محمد"
 اطبع(دعاء)
 
+# HTML arayüz çıktısı örneği
+لن buffer = ""
+لن html_baslik = _html_element("h1", "نتائج العمليات", buffer)
+اطبع(html_baslik)
+
+لن html_tablo = _html_element("table", _html_element("tr", _html_element("td", "س", buffer) + _html_element("td", "ص", buffer), buffer) + _html_element("tr", _html_element("td", مجموع, buffer) + _html_element("td", مصفوفة, buffer), buffer), buffer)
+اطبع(html_tablo)
+
 الحمد لله رب العالمين

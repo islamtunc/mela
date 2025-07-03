@@ -5,10 +5,15 @@
 section .data
     msg db "Lexer çalıştı!", 10, 0
     err_bismillah db "Error: First line must be بسم الله الرحمن الرحيم or Bismillahirrahmanirahim", 10, 0
+    err_bismillah_ar db "خطأ: يجب أن تكون أول سطر بسم الله الرحمن الرحيم أو Bismillahirrahمنirahim", 10, 0
     err_elhamdu db "Error: Last line must be الحمد لله رب العالمين or Elhamdulillahirabbulalemin", 10, 0
+    err_elhamdu_ar db "خطأ: يجب أن تكون آخر سطر الحمد لله رب العالمين أو Elhamdulillahirabbulalemin", 10, 0
     err_ext db "Error: File extension must be .ميلا or .mela", 10, 0
+    err_ext_ar db "خطأ: يجب أن يكون امتداد الملف .ميلا أو .mela", 10, 0
     err_comment db "Error: First line must be a comment starting with !", 10, 0
+    err_comment_ar db "خطأ: يجب أن يبدأ أول سطر بعلامة تعجب !", 10, 0
     latin_error_msg db "Error: Only first and last lines can be Latin. All other lines must be Arabic.", 10, 0
+    latin_error_msg_ar db "خطأ: فقط أول وآخر سطر يمكن أن يكونا باللاتينية. باقي الأسطر يجب أن تكون بالعربية.", 10, 0
     bismillah_ar db 0xD8,0xA8,0xD8,0xB3,0xD9,0x85,0x20,0xD8,0xA7,0xD9,0x84,0xD9,0x84,0xD9,0x87,0x20,0xD8,0xA7,0xD9,0x84,0xD8,0xB1,0xD8,0xAD,0xD9,0x85,0xD9,0x86,0x20,0xD8,0xA7,0xD9,0x84,0xD8,0xB1,0xD8,0xAD,0xD9,0x8A,0xD9,0x85,0 ; بسم الله الرحمن الرحيم UTF-8
     bismillah_lat db "Bismillahirrahmanirahim", 0
     elhamdu_ar db 0xD8,0xA7,0xD9,0x84,0xD8,0xAD,0xD9,0x85,0xD8,0xAF,0x20,0xD9,0x84,0xD9,0x84,0xD9,0x87,0x20,0xD8,0xB1,0xD8,0xA8,0x20,0xD8,0xA7,0xD9,0x84,0xD8,0xB9,0xD8,0xA7,0xD9,0x84,0xD9,0x85,0xD9,0x8A,0xD9,0x86,0 ; الحمد لله رب العالمين UTF-8
@@ -74,6 +79,9 @@ _start:
     mov rsi, err_comment
     mov rdx, 44
     syscall
+    mov rsi, err_comment_ar
+    mov rdx, 44
+    syscall
     jmp .exit
 .bismillah_ok:
 
@@ -101,6 +109,9 @@ _start:
     mov rax, 1
     mov rdi, 1
     mov rsi, err_ext
+    mov rdx, 56
+    syscall
+    mov rsi, err_ext_ar
     mov rdx, 56
     syscall
     jmp .exit
@@ -165,6 +176,9 @@ _start:
     mov rsi, err_elhamdu
     mov rdx, 61
     syscall
+    mov rsi, err_elhamdu_ar
+    mov rdx, 61
+    syscall
     jmp .exit
 .not_found:
     jmp .elhamdu_error
@@ -197,6 +211,14 @@ _start:
     jmp .exit
 
 .file_error:
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, err_bismillah
+    mov rdx, 70
+    syscall
+    mov rsi, err_bismillah_ar
+    mov rdx, 70
+    syscall
     mov rax, 60
     mov rdi, 1
     syscall
@@ -356,6 +378,9 @@ check_latin:
     mov rsi, latin_error_msg
     mov rdx, 68
     syscall
+    mov rsi, latin_error_msg_ar
+    mov rdx, 68
+    syscall
     jmp .exit
 .skip_latin_check:
     ; Son satır kontrolü için dosyanın sonuna git
@@ -415,6 +440,9 @@ check_latin:
     mov rax, 1
     mov rdi, 1
     mov rsi, err_elhamdu
+    mov rdx, 61
+    syscall
+    mov rsi, err_elhamdu_ar
     mov rdx, 61
     syscall
     jmp .exit
