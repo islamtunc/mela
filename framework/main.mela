@@ -1,0 +1,14 @@
+! بسم الله الرحمن الرحيم
+
+! Example Mela Application using the Framework
+
+كلاس برنامج {
+    وظيفة main() {
+        اطبع("Hello, Mela Framework!")
+    }
+}
+
+برنامج app = جديد برنامج()
+app.main()
+
+! الحمد لله رب العالمين

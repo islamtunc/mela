@@ -14,60 +14,64 @@ const Footer = () => (
       <div className="row">
         {/* About Section */}
         <div className="col-md-4 mt-md-0 mt-3">
-          <h5 className="text-uppercase font-weight-bold">Hakkımızda</h5>
+          <h5 className="text-uppercase font-weight-bold">About</h5>
           <p>
-            Mimarid, yaşam alanlarınızı estetik ve fonksiyonel çözümlerle yeniden tasarlayan bir iç mimarlık ofisidir. Hayalinizdeki mekanları gerçeğe dönüştürmek için buradayız.
+            Mela is an open-source programming language designed for simplicity, readability, and modern software development. Join our community and start building with Mela today!
           </p>
         </div>
 
         {/* Links Section */}
         <div className="col-md-4 mb-md-0 mb-3">
-          <h5 className="text-uppercase font-weight-bold">Hızlı Menü</h5>
+          <h5 className="text-uppercase font-weight-bold">Quick Links</h5>
           <ul className="list-unstyled">
             <li>
-              <a href="/malper" className="text-white">
-                Anasayfa
-              </a>
+              <a href="/malper" className="text-white">Home</a>
             </li>
             <li>
-              <a href="/malper/projeler/konut" className="text-white">
-                Projelerimiz
-              </a>
+              <a href="/malper/dokumantasyon" className="text-white">Documentation</a>
             </li>
             <li>
-              <a href="/malper/hizmetler/tasarim" className="text-white">
-                Hizmetlerimiz
-              </a>
+              <a href="/malper/cevrimici-derleyici" className="text-white">Online Compiler</a>
             </li>
             <li>
-              <a href="/malper/iletisim" className="text-white">
-                İletişim
-              </a>
+              <a href="/malper/ornekler" className="text-white">Examples</a>
+            </li>
+            <li>
+              <a href="/malper/topluluk" className="text-white">Community</a>
+            </li>
+            <li>
+              <a href="/malper/blog" className="text-white">Blog</a>
+            </li>
+            <li>
+              <a href="/malper/hakkimizda" className="text-white">About</a>
+            </li>
+            <li>
+              <a href="/malper/iletisim" className="text-white">Contact</a>
             </li>
           </ul>
         </div>
 
         {/* Social Media Section */}
         <div className="col-md-4 mb-md-0 mb-3">
-          <h5 className="text-uppercase font-weight-bold">Bizi Takip Edin</h5>
+          <h5 className="text-uppercase font-weight-bold">Follow Us</h5>
           <ul className="list-unstyled d-flex justify-content-center">
             <li className="mx-2">
-              <a href="https://facebook.com" className="text-white" aria-label="Facebook">
-                <i className="fab fa-facebook-f"></i>
+              <a href="https://github.com/mela-lang" className="text-white" aria-label="GitHub">
+                <i className="fab fa-github"></i>
               </a>
             </li>
             <li className="mx-2">
-              <a href="https://instagram.com" className="text-white" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
+              <a href="https://x.com/melalang" className="text-white" aria-label="X">
+                <i className="fab fa-x-twitter"></i>
               </a>
             </li>
             <li className="mx-2">
-              <a href="https://pinterest.com" className="text-white" aria-label="Pinterest">
-                <i className="fab fa-pinterest"></i>
+              <a href="https://discord.gg/melalang" className="text-white" aria-label="Discord">
+                <i className="fab fa-discord"></i>
               </a>
             </li>
             <li className="mx-2">
-              <a href="https://linkedin.com" className="text-white" aria-label="LinkedIn">
+              <a href="https://linkedin.com/company/melalang" className="text-white" aria-label="LinkedIn">
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </li>
@@ -77,9 +81,9 @@ const Footer = () => (
     </div>
 
     <div className="text-center py-3">
-      © {new Date().getFullYear()} Tüm Hakları Saklıdır:{" "}
-      <a href="https://mimarid.com" className="text-white">
-        Mimarid İç Mimarlık
+      © {new Date().getFullYear()} All Rights Reserved: {" "}
+      <a href="https://mela-lang.org" className="text-white">
+        Mela Programming Language
       </a>
     </div>
   </footer>
