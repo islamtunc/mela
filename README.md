@@ -76,3 +76,19 @@ mela مثال.ميلا
 (You can create a batch file named `mela.cmd` in the project root to forward the command to WSL, so you can use `mela` directly in the Windows command prompt.)
 
 For Linux or MacOS, see the instructions in `lexer/build_and_run_lexer.cmd` or the lexer README.
+
+## Windows Installer (.exe)
+You can install Mela easily on Windows using the provided installer:
+
+[Download Mela Installer (.exe)](https://antolojiyaislame.vercel.app/mela-setup-latest.exe)
+
+**How to use the installer:**
+1. Download the `.exe` file from the link above.
+2. Double-click to run the installer and follow the on-screen instructions.
+3. The installer will copy all necessary files, set up your PATH, and create a desktop shortcut for Mela.
+4. After installation, you can use `mela` from any command prompt or use the desktop shortcut for the interactive shell.
+
+If you want to build the installer yourself:
+- Download and install [NSIS](https://nsis.sourceforge.io/Download).
+- Open NSIS, select "Compile NSI scripts", and load `installer.nsi` from this project.
+- Click "Compile" to generate the `.exe` installer.
