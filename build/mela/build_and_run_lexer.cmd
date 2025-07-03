@@ -1,6 +1,9 @@
 @echo off
 REM Mela lexer build and run script for Windows (with WSL)
 
+REM This script helps you build and run the Mela lexer on any Windows computer.
+REM For other systems (Linux, Mac), see the instructions below.
+
 REM Check if WSL is installed
 where wsl >nul 2>nul
 if errorlevel 1 (
@@ -29,3 +32,13 @@ echo wsl ./lexer yourfile.mela
 
 echo Or for Arabic filenames:
 echo wsl ./lexer مثال.ميلا
+
+echo.
+echo === For Linux or MacOS systems ===
+echo 1. Install NASM and ld using your package manager.
+echo 2. Open a terminal in this directory.
+echo 3. Run: nasm -f elf64 lexer.asm -o lexer.o
+echo 4. Run: ld lexer.o -o lexer
+echo 5. Run: ./lexer yourfile.mela
+
+echo For more details, see the README file.
