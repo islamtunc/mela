@@ -1,6 +1,6 @@
-بسم الله الرحمن الرحيم
+! بسم الله الرحمن الرحيم
 
-# Example Mela Application using the Framework
+! Example Mela Application using the Framework
 
 كلاس برنامج {
     وظيفة main() {
@@ -11,4 +11,4 @@
 برنامج app = جديد برنامج()
 app.main()
 
-الحمد لله رب العالمين
+! الحمد لله رب العالمين
