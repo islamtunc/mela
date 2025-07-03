@@ -112,3 +112,4 @@ _array_find:
 .not_found:
     mov rax, -1
     ret
+;Elhamdulillahirabbulalemin

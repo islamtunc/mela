@@ -1,0 +1,12 @@
+; ...existing code...
+Array Fonksiyonları Belgesi
+==========================
+
+- _array_init(arr_addr, size, value): Dizi başlatır ve tüm elemanları value ile doldurur.
+- _array_get(arr_addr, index): Belirtilen indexteki değeri döndürür.
+- _array_set(arr_addr, index, value): Belirtilen indexe value değerini yazar.
+- _array_fill(arr_addr, value, count): Dizinin ilk count elemanını value ile doldurur.
+- _array_copy(src_addr, dst_addr, count): src dizisinden dst dizisine count kadar eleman kopyalar.
+- _array_find(arr_addr, value, count): Dizide value değerini arar, bulursa index, bulamazsa -1 döner.
+
+Kullanım örnekleri için example_array.mela dosyasına bakınız.

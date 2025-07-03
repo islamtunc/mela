@@ -1,0 +1,11 @@
+# Bismillahirrahmanirahim
+# example_array.mela - Dizi kullanımı örneği
+
+لن dizi = array.create(5)
+array.set(dizi, 0, 42)
+array.set(dizi, 1, 99)
+لن x = array.get(dizi, 0)
+اطبع("İlk eleman:", x)
+لن idx = array.find(dizi, 99, 5)
+اطبع("99 değeri index:", idx)
+# Elhamdulillahirabbulalemin
