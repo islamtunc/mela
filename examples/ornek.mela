@@ -1,5 +1,4 @@
-# Basit bir Mela örneği (Arap alfabesiyle)
-
+Bismillahirrahmanirahim
 كلاس سيارة {
     عدد_العجلات = ٤
     وظيفة تحرك() {
@@ -9,3 +8,4 @@
 
 سيارة سيارتي = جديد سيارة()
 سيارتي.تحرك()
+Elhamdulillahirabbulalemin
