@@ -48,7 +48,6 @@ if not is_admin():
 class InstallerGUI:
     def __init__(self, root):
         self.root = root
-        # Always resolve src_dir to the project root (two levels up from this script)
         self.src_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
         self.install_dir = os.path.join(os.path.expanduser('~'), 'MelaLang')
         self.items = [
@@ -70,6 +69,8 @@ class InstallerGUI:
         self.install_btn.pack(pady=5)
         self.quit_btn = tk.Button(root, text="Exit", command=root.quit)
         self.quit_btn.pack(pady=2)
+        self.log("Bismillahirrahmanirahim\nMela Language Simple Installer\nElhamdulillah!\n")
+        self.log(f"Installing Mela to: {self.install_dir}\n")
 
     def log(self, msg):
         self.text.insert(tk.END, msg + "\n")
@@ -78,9 +79,15 @@ class InstallerGUI:
 
     def run_install(self):
         try:
-            self.log("Bismillahirrahmanirahim\nMela Language Simple Installer\nElhamdulillah!\n")
-            self.log(f"Installing Mela to: {self.install_dir}\n")
             os.makedirs(self.install_dir, exist_ok=True)
+            # Set hidden attribute on the install directory (Windows only)
+            try:
+                import ctypes
+                FILE_ATTRIBUTE_HIDDEN = 0x02
+                ctypes.windll.kernel32.SetFileAttributesW(self.install_dir, FILE_ATTRIBUTE_HIDDEN)
+                self.log("MelaLang folder set as hidden.")
+            except Exception as e:
+                self.log(f"Could not set hidden attribute: {e}")
             # Try to build lexer.exe using build_lexer_win.cmd first
             lexer_build_script = os.path.join(self.src_dir, 'lexer', 'build_lexer_win.cmd')
             if os.path.exists(lexer_build_script):
