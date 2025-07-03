@@ -1,0 +1,13 @@
+# In the name of Allah, the Most Gracious, the Most Merciful
+# build_and_run_car.mela - Example script to build and run a Car class
+
+كلاس سيارة {
+    عدد_العجلات = ٤
+    وظيفة تحرك() {
+        اطبع("السيارة تتحرك!")
+    }
+}
+
+سيارة سيارتي = جديد سيارة()
+سيارتي.تحرك()
+# All praise is due to Allah, Lord of the Worlds
