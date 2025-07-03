@@ -1,0 +1,49 @@
+{
+  "name": "mela-language-support",
+  "displayName": "Mela Language Support",
+  "description": "VS Code extension for Mela programming language: syntax highlighting, run command, and more.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": ">=1.51.0"
+  },
+  "categories": ["Programming Languages"],
+  "activationEvents": [
+    "onLanguage:mela",
+    "onCommand:mela.run"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "mela",
+        "aliases": ["Mela", "mela"],
+        "extensions": [".mela"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mela",
+        "scopeName": "source.mela",
+        "path": "./syntaxes/mela.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "mela.run",
+        "title": "Run Mela Program"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.51.0",
+    "typescript": "^5.0.0"
+  }
+}
