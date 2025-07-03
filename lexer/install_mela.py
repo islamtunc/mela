@@ -22,15 +22,24 @@ def is_admin():
         except:
             return False
 
+def elevate_with_tk():
+    root = tk.Tk()
+    root.withdraw()
+    if messagebox.askyesno("Administrator Permission Required", "This installer needs to run as administrator.\n\nDo you want to restart with admin rights?"):
+        import subprocess
+        script = os.path.abspath(__file__)
+        params = ' '.join([f'"{arg}"' for arg in sys.argv])
+        try:
+            subprocess.run(['powershell', '-Command', f'Start-Process pythonw.exe \"{script}\" -Verb RunAs'], check=True)
+        except Exception as e:
+            messagebox.showerror("Elevation Failed", f"Failed to elevate: {e}")
+        sys.exit()
+    else:
+        messagebox.showinfo("Cancelled", "Installation cancelled. Admin rights are required.")
+        sys.exit()
+
 if not is_admin():
-    import subprocess
-    script = os.path.abspath(__file__)
-    params = ' '.join([f'"{arg}"' for arg in sys.argv])
-    try:
-        subprocess.run(['powershell', '-Command', f'Start-Process pythonw.exe \"{script}\" -Verb RunAs'], check=True)
-    except Exception as e:
-        print("Failed to elevate:", e)
-    sys.exit()
+    elevate_with_tk()
 
 # Remove all top-level install/copy logic. Only GUI will perform installation.
 
