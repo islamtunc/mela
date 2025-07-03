@@ -1,0 +1,34 @@
+// Bismillahirrahmanirahim
+// Example Gradle config for Android JNI integration
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 34
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+        externalNativeBuild {
+            ndkBuild {
+                path "src/main/jni/Android.mk"
+            }
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path "src/main/jni/Android.mk"
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['java']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+}
+// Elhamdulillahirabbulalemin
