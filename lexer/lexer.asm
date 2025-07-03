@@ -6,10 +6,13 @@ section .data
     msg db "Lexer çalıştı!", 10, 0
     err_bismillah db "Error: First line must be بسم الله الرحمن الرحيم or Bismillahirrahmanirahim", 10, 0
     err_elhamdu db "Error: Last line must be الحمد لله رب العالمين or Elhamdulillahirabbulalemin", 10, 0
+    err_ext db "Error: File extension must be .ميلا or .mela", 10, 0
     bismillah_ar db 0xD8,0xA8,0xD8,0xB3,0xD9,0x85,0x20,0xD8,0xA7,0xD9,0x84,0xD9,0x84,0xD9,0x87,0x20,0xD8,0xA7,0xD9,0x84,0xD8,0xB1,0xD8,0xAD,0xD9,0x85,0xD9,0x86,0x20,0xD8,0xA7,0xD9,0x84,0xD8,0xB1,0xD8,0xAD,0xD9,0x8A,0xD9,0x85,0 ; بسم الله الرحمن الرحيم UTF-8
     bismillah_lat db "Bismillahirrahmanirahim", 0
     elhamdu_ar db 0xD8,0xA7,0xD9,0x84,0xD8,0xAD,0xD9,0x85,0xD8,0xAF,0x20,0xD9,0x84,0xD9,0x84,0xD9,0x87,0x20,0xD8,0xB1,0xD8,0xA8,0x20,0xD8,0xA7,0xD9,0x84,0xD8,0xB9,0xD8,0xA7,0xD9,0x84,0xD9,0x85,0xD9,0x8A,0xD9,0x86,0 ; الحمد لله رب العالمين UTF-8
     elhamdu_lat db "Elhamdulillahirabbulalemin", 0
+    ext_ar db 0x2E,0xD9,0x85,0xD9,0x8A,0xD9,0x84,0xD8,0xA7,0 ; .ميلا UTF-8
+    ext_lat db ".mela", 0
     buf times 256 db 0
     buf_end times 256 db 0
 
@@ -55,6 +58,35 @@ _start:
     cmp rax, 0
     jne .bismillah_error
 .bismillah_ok:
+
+    ; Dosya uzantısı kontrolü (hem .ميلا hem .mela kabul)
+    mov rsi, [rsp+16] ; argv[1] (filename pointer)
+    call get_filename_length
+    mov rcx, rax      ; rcx = length
+    mov rsi, [rsp+16] ; filename
+    add rsi, rcx
+    sub rsi, 10       ; .ميلا UTF-8 (10 byte)
+    mov rdi, ext_ar
+    mov rdx, 10
+    call strncmp_ext
+    cmp rax, 0
+    je .ext_ok
+    mov rsi, [rsp+16]
+    add rsi, rcx
+    sub rsi, 5        ; .mela (5 byte)
+    mov rdi, ext_lat
+    mov rdx, 5
+    call strncmp_ext
+    cmp rax, 0
+    je .ext_ok
+    ; Hata: uzantı yok
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, err_ext
+    mov rdx, 56
+    syscall
+    jmp .exit
+.ext_ok:
 
     ; Dosyanın son 256 byte'ını oku (son satır için)
     mov rax, 8        ; sys_lseek
@@ -152,6 +184,45 @@ strncmp_bismillah:
     pop rbx
     ret
 .not_equal:
+    mov rax, 1
+    pop rbx
+    ret
+
+; Dosya adının uzunluğunu bulur (rsi: ptr, döner: rax=uzunluk)
+get_filename_length:
+    push rsi
+    xor rax, rax
+.len_loop:
+    mov bl, [rsi]
+    cmp bl, 0
+    je .len_done
+    inc rsi
+    inc rax
+    jmp .len_loop
+.len_done:
+    pop rsi
+    ret
+
+; rsi: buffer, rdi: ext, rdx: len, döner: rax=0 eşit, !=0 değil
+strncmp_ext:
+    push rbx
+    mov rcx, rdx
+.loop_ext:
+    cmp rcx, 0
+    je .done_ext
+    mov al, [rsi]
+    mov bl, [rdi]
+    cmp al, bl
+    jne .not_equal_ext
+    inc rsi
+    inc rdi
+    dec rcx
+    jmp .loop_ext
+.done_ext:
+    xor rax, rax
+    pop rbx
+    ret
+.not_equal_ext:
     mov rax, 1
     pop rbx
     ret
