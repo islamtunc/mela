@@ -1,5 +1,6 @@
-; core/parser.asm - Mela Compiler Parser (template)
 ; In the name of Allah, the Most Gracious, the Most Merciful
+; core/parser.asm - Mela Compiler Parser (template)
+
 
 section .text
     global parse_file
