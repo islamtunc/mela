@@ -1,0 +1,21 @@
+# Bismillah-ir-Rahman-ir-Rahim
+# Elhamdulillahi Rabbil 'Alamin
+# Esselatu ve selamu ala resulina Muhammedin
+# SuphanAllahi wa bihamdihi, SubhanAllahil Azim
+# Allahu Akbar, Allahu Akbar, Allahu Akbar, La ilahe illallah
+# This file is part of Mela project:
+node_modules/
+npm-debug.log*
+yarn-error.log
+yarn-debug.log*
+.pnpm-debug.log*
+
+# VS Code
+.vscode/
+out/
+dist/
+*.vsix
+
+# OS
+.DS_Store
+Thumbs.db

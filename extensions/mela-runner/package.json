@@ -1,0 +1,30 @@
+{
+    "name": "mela-runner",
+    "displayName": "Mela Runner (local)",
+    "description": "Run Mela lexer locally (not for Marketplace).",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "activationEvents": [
+        "onCommand:mela.runLexer"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "mela.runLexer",
+                "title": "Mela: Run Lexer (local)"
+            }
+        ]
+    },
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -w -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^24.10.1",
+        "typescript": "^4.0.0",
+        "vscode": "^1.1.37"
+    }
+}

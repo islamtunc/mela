@@ -1,4 +1,3 @@
-; tests/test_example.asm - Example test (template)
 ; In the name of Allah, the Most Gracious, the Most Merciful
 
 section .text

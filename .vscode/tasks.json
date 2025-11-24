@@ -2,13 +2,18 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run Lexer",
+            "label": "compile-mela",
             "type": "shell",
-            "command": "python",
-            "args": [
-                "lexer/lexer.py"
-            ],
-            "group": "build",
+            "command": "bash",
+            "args": ["-c", "./build_lexer.sh"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
             "problemMatcher": []
         }
     ]
